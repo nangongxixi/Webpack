@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>
+          <a href="/acceptance">网上受理</a> &gt;
+        </span>
+        <span>县长信箱</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">网上受理</div>
+          <div class="en">Online acceptance</div>
+        </div>
+        <div class="list">
+          <a href="/acceptance">民生投诉</a>
+          <a href="/acceptance/magistrate" class="active">县长信箱</a>
+          <a href="/acceptance/show">诉求展示</a>
+          <a href="/acceptance/opinion">意见建议</a>
+        </div>
+      </div>
+      <div class="in-content clearfix">
+        <div class="info-box fl clearfix">
+          <img class="fl" src="../../lib/app/img/xzzp.png" alt="">
+          <div class="fl info">
+            <div class="title">县长： 唐敬</div>
+            <div class="intro">领导寄语：倾听群众心声，把握射阳脉动，引导政风民情，服务科学发展。感谢大家来访，欢迎大家为我们建言献策，共同创造射阳人的幸福生活！</div>
+            <a class="btn xz-mail" href="javascript:;"><i class="icon"></i>我要写信</a>
+          </div>
+        </div>
+        <div class="fl letters">
+          <div class="title">已办结信件统计</div>
+          <div class="fl detail">
+            <div class="left fl">
+              <div class="t1">信件类型</div>
+              <div class="t2">回复/总数</div>
+              <div class="t1">信件类型</div>
+              <div class="">回复/总数</div>
+            </div>
+            <div class="right" id="mail">
+            </div>
+          </div>
+        </div>
+        <div class="fl">
+          <table class="table" id="box5">
+          </table>
+          <div class="page-bar">
+            <div id="page" class="pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  @require('../../lib/app/components/footer.html')
+  <script type="text/html" id="box5_tpl">
+    <tbody>
+      <tr class="tr-tit">
+        <th style="width:460px">信件标题</th>
+        <th style="width:90px">信件类型</th>
+        <th style="width:120px">来源</th>
+        <th style="width:90px">来信人</th>
+        <th style="width:120px">来信日期</th>
+        <th style="width:120px">状态</th>
+        <th style="width:150px">评价</th>
+      </tr>
+     {{each datalist val i}}
+     <tr>
+        <td class="tl">
+          <div class="td_1 fof">
+            <a style="width:345px" class="fof" href="/acceptance/magistrate/detail/index.html?id={{val.mailboxid}}">{{val.mailtitle}}</a>
+          </div>
+        </td>
+        <td class="tc">{{val.mailtypeid | _mailtypeid}}</td>
+        <td class="tc">{{val.mailfrom === 2 ? '投诉' : '县长信箱'}}</td>
+        <td class="tc"><div class="fof" style="width:120px">{{val.mailfromuser}}</div></td>
+        <td class="tc">{{val.mailcreatetime.split(' ')[0]}}</td>
+        <td class="tc">{{val.mailstatus | _mailstatus}}</td>
+        <td class="tc">{{val.mailevaluate | _mailevaluate}}</td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </script>
+  <script type="text/html" id="mail_tpl">
+  {{each data val index}}
+  <div class="item fl">
+    <div class="d1">{{val.typename}}</div>
+    <div class="d2">{{val.shuliang}}</div>
+  </div>
+  {{/each}}
+  </script>
+</body>
+
+</html>

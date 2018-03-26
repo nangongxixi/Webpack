@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('./lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="box-1 box fl" id="box1"></div>
+    <div class="box-2 box fl">
+      <div class="title clearfix">
+        <span class="fl">新闻中心</span>
+        <a class="fr" href="/list/index.html#0">更多</a>
+      </div>
+      <div class="content" id="box2"></div>
+    </div>
+    <div class="box-3 box fl">
+      <div class="title clearfix">
+        <span class="fl">通知公告</span>
+        <a class="fr" href="/list/index.html#1">更多</a>
+      </div>
+      <div class="content" id="box3"></div>
+    </div>
+    <div class="box-4 box fl">
+      <div class="title clearfix">
+          <span class="fl">工作动态</span>
+          <a class="fr" href="/list/index.html#2">更多</a>
+      </div>
+      <div class="content" id="box4"></div>
+    </div>
+    <div class="box-5 box fl">
+      <div class="title clearfix">
+          <span class="fl">热门服务</span>
+      </div>
+      <div class="content">
+        <a class="mgr10 mgb10" target="_blank" href="http://www.sy12345.cn/sy12345web/"><img src="./lib/app/img/icon_01.png" alt=""></a>
+        <a class="mgr10 mgb10" target="_blank" href="http://218.92.240.41/sy12345/"><img src="./lib/app/img/icon_02.png" alt=""></a>
+        <a class="mgb10"href="/acceptance/magistrate"><img src="./lib/app/img/icon_03.png" alt=""></a>
+        <a class="mgr10" href="/acceptance"><img src="./lib/app/img/icon_04.png" alt=""></a>
+        <a class="mgr10" target="_blank" href="http://www.sheyang.gov.cn/zgsy/hdjl/005007/"><img src="./lib/app/img/icon_05.png" alt=""></a>
+        <a target="_blank" href="http://www.sheyang.gov.cn/zgsy/ggfw/509002/"><img src="./lib/app/img/icon_06.png" alt=""></a>
+      </div>
+    </div>
+    <div class="box-6 box fl">
+      <div class="title clearfix">
+        <span class="fl">诉求展示</span>
+        <a class="fr" href="/acceptance/show">更多</a>
+      </div>
+      <div class="content">
+        <table class="index-table table" id="box5">
+          
+        </table>
+      </div>
+    </div>
+  </main>
+
+  @require('./lib/app/components/footer.html')
+  <script type="text/html" id="box1_tpl">
+    {{each datalist val i}}
+    <div class="item">
+      <a href="/news/index.html?id={{val.newsid}}"><img class="img" src="{{val.imagelist[0].largepic}}" alt=""> </a>
+      <a href="/news/index.html?id={{val.newsid}}"><span>{{val.newstitle}}</span></a>
+    </div>
+    {{/each}}
+  </script>
+  <script type="text/html" id="box2_tpl">
+    <ul>
+      {{each datalist val i}}
+      <li>
+        <a class="clearfix" href="../news/index.html?id={{val.newsid}}">
+          <span class="dot fl">●</span>
+          <span class="text fl fof">{{val.newstitle}}</span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </script>
+  <script type="text/html" id="box3_tpl">
+    <ul>
+      {{each datalist val i}}
+      <ul>
+        <li>
+          <a href="../news/index.html?id={{val.newsid}}" class="clearfix">
+            <span class="dot fl">●</span>
+            <span class="text fl fof">{{val.newstitle}}</span>
+            <span class="date fr">[{{val.createtime.split(' ')[0]}}]</span>
+          </a>
+        </li>
+      </ul>
+      {{/each}}
+    </ul>
+  </script>
+  <script type="text/html" id="box4_tpl">
+    <ul>
+      {{each datalist val i}}
+      <ul>
+        <li>
+          <a href="../news/index.html?id={{val.newsid}}" class="clearfix">
+            <span class="dot fl">●</span>
+            <span class="text fl fof">{{val.newstitle}}</span>
+            <span class="date fr">[{{val.createtime.split(' ')[0]}}]</span>
+          </a>
+        </li>
+      </ul>
+      {{/each}}
+    </ul>
+  </script>
+  <script type="text/html" id="box5_tpl">
+    <tbody>
+      <tr class="tr-tit">
+        <th style="width:460px">信件标题</th>
+        <th style="width:90px">信件类型</th>
+        <th style="width:120px">来源</th>
+        <th style="width:90px">来信人</th>
+        <th style="width:120px">来信日期</th>
+        <th style="width:120px">状态</th>
+        <th style="width:150px">评价</th>
+      </tr>
+     {{each datalist val i}}
+     <tr>
+        <td class="tl">
+          <div class="td_1 fof">
+            <a class="fof" style="width:440px" href="/acceptance/show/detail/index.html?id={{val.mailboxid}}">{{val.mailtitle}}</a>
+          </div>
+        </td>
+        <td class="tc">{{val.mailtypeid | _mailtypeid}}</td>
+        <td class="tc">{{val.mailfrom === 2 ? '投诉' : '县长信箱'}}</td>
+        <td class="tc"><div class="fof" style="width:120px">{{val.mailfromuser}}</div></td>
+        <td class="tc">{{val.mailcreatetime.split(' ')[0]}}</td>
+        <td class="tc">{{val.mailstatus | _mailstatus}}</td>
+        <td class="tc">{{val.mailevaluate | _mailevaluate}}</td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </script>
+</body>
+
+</html>

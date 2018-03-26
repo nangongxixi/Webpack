@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>专题专栏</span>
+      </div>
+    </div>
+    <div class="container">
+      <div id="box1" class="clearfix"></div>
+      <div class="page-bar">
+        <div id="page"></div>
+      </div>
+    </div>
+  </main>
+
+  @require('../lib/app/components/footer.html')
+  <script type="text/html" id="box1_tpl">
+    {{each datalist val i}}
+    <div class="item">
+      {{if val.newsmodel === 3}}
+      <a href="{{val.linkurl}}" target="_blank">
+        {{if val.imagelist.length != 0}}
+        <img src="{{val.imagelist[0].largepic}}" alt="">
+        {{/if}}
+        {{if val.imagelist.length == 0}}
+        <img src="../lib/app/img/xw.jpg" alt="">
+        {{/if}}
+        <div class="intro">{{val.newstitle}}</div>
+      </a>
+      {{/if}}
+      {{if val.newsmodel !== 3}}
+      <a href="/feature/detail/index.html?id={{val.newsid}}">
+        {{if val.imagelist.length != 0}}
+        <img src="{{val.imagelist[0].largepic}}" alt="">
+        {{/if}}
+        {{if val.imagelist.length == 0}}
+        <img src="../lib/app/img/xw.jpg" alt="">
+        {{/if}}
+        <div class="intro">{{val.newstitle}}</div>
+      </a>
+      {{/if}}
+    </div>
+    {{/each}}
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+main {
+  width: 1200px;
+  margin: 32px auto 30px;
+}
+
+.slick-dots {
+  bottom: 10px;
+  right: 0;
+  width: 150px;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #2959ae;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.box .title {
+  height: 37px;
+  line-height: 37px;
+  padding: 0 12px;
+  color: #fff;
+  font-size: 16px;
+  background: url(../lib/app/img/Title_bj.png) no-repeat #dce8fc center left;
+}
+
+.box .title a {
+  display: block;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #3e6bb9;
+  background: url(../lib/app/img/More_icon.png) no-repeat center right;
+}
+
+.box .title a:hover {
+  opacity: .5;
+}
+
+.box .content {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  height: 295px;
+  width: 100%;
+  padding: 17px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.box .content li {
+  margin-bottom: 9px;
+  font-size: 14px;
+  color: #333;
+  transition: .3s;
+}
+
+.box .content li a {
+  display: block;
+}
+
+.box .content li .dot {
+  position: relative;
+  font-size: 15px;
+  color: #999;
+  margin: 0 5px;
+}
+
+.box .content li:hover {
+  color: #ccc;
+}
+
+.box .content li:hover .dot {
+  color: #ccc;
+}
+
+.box-1 {
+  margin: 0 20px 20px 0;
+  width: 590px;
+  height: 332px;
+  overflow: hidden;
+}
+
+.box-1 .item {
+  outline: none;
+  position: relative;
+}
+
+.box-1 .item .img {
+  width: 590px;
+  height: 332px;
+}
+
+.box-1 .item span {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  padding: 0 200px 0 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  background: rgba(0,0,0,.5);
+  font-size: 18px;
+  color: #fff;
+}
+
+.box-2 {
+  margin-bottom: 20px;
+  width: 590px;
+  height: 332px;
+}
+
+.box-3 , .box-4 {
+  width: 386px;
+  margin-right: 21px;
+  margin-bottom: 20px;
+}
+
+.box-5 {
+  width: 386px;
+  margin-bottom: 20px;
+}
+
+.box-6 {
+  width: 1200px;
+}
+
+.box-3 .content,
+.box-4 .content,
+.box-5 .content {
+  height: 190px;
+}
+
+.box-2 .content li a {
+  display: block
+}
+
+.box-2 .content li .text {
+  width: 540px;
+}
+
+.box-3 .content li .text,
+.box-4 .content li .text {
+  width: 250px;
+}
+
+.box-5 .content {
+  padding: 10px;
+  font-size: 0;
+}
+
+.box-5 .content a {
+  float: left;
+  display: block;
+}
+
+.box-6 .content {
+  height: auto;
+}
+
+.box-6 .td_1 {
+  width: 440px;
+  padding: 0 10px;
+}

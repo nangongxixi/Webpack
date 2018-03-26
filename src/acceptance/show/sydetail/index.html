@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span><a href="/acceptance/show">诉求展示</a> &gt;</span>
+        <span>详情</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">网上受理</div>
+          <div class="en">Online acceptance</div>
+        </div>
+        <div class="list">
+          <a href="/acceptance">民生投诉</a>
+          <a href="/acceptance/magistrate">县长信箱</a>
+          <a href="/acceptance/show" class="active">诉求展示</a>
+          <a href="/acceptance/opinion">意见建议</a>
+        </div>
+      </div>
+      <div class="in-content" id="box">
+      </div>
+    </div>
+  </main>
+
+  @require('../../../lib/app/components/footer.html')
+  <script type="text/html" id="box_tpl">
+    <div class="title">{{title}}</div>
+    <div class="item clearfix">
+      <div class="left">信息类别：</div>
+      <div class="right">{{type | _type}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">办理状态：</div>
+      <div class="right">{{banjie}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">诉求编号：</div>
+      <div class="right">{{caseid}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">来信时间：</div>
+      <div class="right">{{createtime}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">信件内容：</div>
+      <div class="right">{{content}}</div>
+    </div>
+    <div class="border"></div>
+    <div class="item clearfix">
+      <div class="left">回复部门：</div>
+      <div class="right">{{replyuser === null ? '无' : replyuser}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">回复时间：</div>
+      <div class="right">{{time === null ? '无' : time}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">回复意见：</div>
+      <div class="right">{{replycontent === null ? '无' : replycontent}}</div>
+    </div>
+    <div class="border"></div>
+    <div class="item clearfix">
+      <div class="left">评论人：</div>
+      <div class="right">{{name}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">满意度：</div>
+      <div class="right">{{satisfaction | _satisfaction}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">评价内容：</div>
+      <div class="right">{{commentcontent === null ? '未评价' : commentcontent}}</div>
+    </div>
+  </script>
+</body>
+
+</html>

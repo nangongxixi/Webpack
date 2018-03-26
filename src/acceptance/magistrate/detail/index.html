@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span><a href="/acceptance/show">县长信箱</a> &gt;</span>
+        <span>详情</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">网上受理</div>
+          <div class="en">Online acceptance</div>
+        </div>
+        <div class="list">
+          <a href="/acceptance">民生投诉</a>
+          <a href="/acceptance/magistrate" class="active">县长信箱</a>
+          <a href="/acceptance/show">诉求展示</a>
+          <a href="/acceptance/opinion">意见建议</a>
+        </div>
+      </div>
+      <div class="in-content" id="box">
+      </div>
+    </div>
+  </main>
+
+  @require('../../../lib/app/components/footer.html')
+  <script type="text/html" id="box_tpl">
+    <div class="title">{{mailtitle}}</div>
+    <div class="item clearfix">
+      <div class="left">信息类别：</div>
+      <div class="right">{{mailtypeid | _mailtypeid}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">办理状态：</div>
+      <div class="right">{{mailstatus | _mailstatus}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">诉求编号：</div>
+      <div class="right">{{mailboxid}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">来信时间：</div>
+      <div class="right">{{mailcreatetime}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">事发地址：</div>
+      <div class="right">{{openaddress}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">信件内容：</div>
+      <div class="right">{{mailcontent}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">附件内容：</div>
+      <div class="right">
+        {{if filepathlist.length == 0}}
+        无附件
+        {{/if}}
+        {{each filepathlist val i}}
+        <div class="filepathlist clearfix">
+            <a href="{{val}}" target="_blank">{{val}}</a>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="border"></div>
+    <div class="item clearfix">
+      <div class="left">回复意见：</div>
+      <div class="right">{{replycontent === null ? '无' : replycontent}}</div>
+    </div>
+    <div class="border"></div>
+    <div class="item clearfix">
+      <div class="left">是否满意：</div>
+      <div class="right">{{mailevaluate | _mailevaluate}}</div>
+    </div>
+    <div class="item clearfix">
+      <div class="left">评价内容：</div>
+      <div class="right">{{evaluateconten === null ? '未评价' : evaluateconten}}</div>
+    </div>
+  </script>
+</body>
+
+</html>

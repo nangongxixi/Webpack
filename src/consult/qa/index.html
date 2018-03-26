@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>
+          <a href="/consult">政务咨询</a> &gt;
+        </span>
+        <span>智能问答</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">政务咨询</div>
+          <div class="en">Government consulting</div>
+        </div>
+        <div class="list">
+          <a href="/consult">热点问题</a>
+          <a href="/consult/qa" class="active">智能问答</a>
+        </div>
+      </div>
+      <div class="chat-box">
+        <div class="chat-list" id="chatPanel">
+          <ul class="chatPanelList">
+            <li class="">
+              <p class="msgData"></p>
+            </li>
+            <li class="clearfix magBox leftMsg" creattime="1516260132273">
+              <img class="fl" src="${require('../../lib/app/img/tx_jqr.png')}" alt="">
+              <div class="msgDiv">
+                <div class="msgText">Hi~我是智能机器人，为您提供相关业务咨询。</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chat-inp">
+          <textarea id="textarea" class="fl" placeholder="请输入您的问题"></textarea>
+          <button class="fl send-msg" disabled>发送</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  @require('../../lib/app/components/footer.html')
+</body>
+
+</html>

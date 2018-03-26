@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span class="breadcrumb-text"></span>
+      </div>
+    </div>
+    <div class="container box">
+      <div class="content" id="list">
+        
+      </div>
+      <div class="page-bar">
+        <div id="page" class="pagination"></div>
+      </div>
+    </div>
+  </main>
+
+  @require('../lib/app/components/footer.html')
+  <script type="text/html" id="list_tpl">
+    <ul>
+      {{each datalist val i}}
+      <li>
+        <a href="../news/index.html?id={{val.newsid}}" class="clearfix">
+          <span class="dot fl">●</span>
+          <span class="text fl fof">{{val.newstitle}}</span>
+          <span class="date fr">[{{val.createtime.split(' ')[0]}}]</span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+    {{if datalist.length === 0}}
+    <div class="empty-box">
+      <img src="../lib/app/img/empty.png" alt=""> <br>
+      <span>什么都没有</span>
+    </div>
+    {{/if}}
+  </script>
+</body>
+
+</html>

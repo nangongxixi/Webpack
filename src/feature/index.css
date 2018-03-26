@@ -1,0 +1,38 @@
+main .container {
+  border: 1px solid #d5d5d5;
+  padding: 0 30px;
+}
+
+main .container .item {
+  float: left;
+  width: 360px;
+  margin-right: 29px;
+  margin-top: 30px;
+  color: #666;
+  line-height: 0;
+  cursor: pointer;
+  transition: .3s;
+}
+
+main .container .item:hover {
+  transform: translateY(-10px)
+}
+
+main .container .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+main .container .item .intro {
+  padding: 5px;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  line-height: 25px;
+  font-size: 16px;
+  height: 64px;
+  overflow: hidden;
+}
+
+main .container .item img {
+  width: 360px;
+  height: 210px;
+}

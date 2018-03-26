@@ -1,0 +1,38 @@
+.box .content {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  padding: 17px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.box .content li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+  transition: .3s;
+}
+
+.box .content li a {
+  display: block;
+}
+
+.box .content li .dot {
+  position: relative;
+  font-size: 15px;
+  color: #999;
+  margin: 0 5px;
+}
+
+.box .content li:hover {
+  color: #ccc;
+}
+
+.box .content li:hover .dot {
+  color: #ccc;
+}
+
+.box .content li .text {
+  width: 1000px;
+}

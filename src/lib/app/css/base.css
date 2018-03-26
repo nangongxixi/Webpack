@@ -1,0 +1,68 @@
+/* 基础样式（与项目无关） */
+body {
+  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  min-width: 1200px;
+}
+
+* {
+  box-sizing: initial;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input, select, textarea {
+  outline: none;
+}
+
+ul {
+  margin: 0;
+}
+
+label {
+  font-weight: normal;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+}
+
+.fof {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

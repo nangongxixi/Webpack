@@ -1,0 +1,54 @@
+.step-1,
+.step-2 {
+  display: none;
+  width: 100%;
+  overflow: hidden;
+}
+
+.step-1.active,
+.step-2.active {
+  display: block;
+}
+
+
+.step-1 .title {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.step-1 .detail p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.layui-input-block {
+  width: 260px;
+}
+
+.layui-input-block input,
+.layui-input-block textarea {
+  border-radius: 4px;
+}
+
+.layui-upload-list .item {
+  background: #f7fafa;
+  height: 30px;
+  width: 480px;
+  line-height: 30px;
+  color: #333;
+  margin-bottom: 1px;
+}
+
+.layui-upload-list .item .name {
+  width: 420px;
+  padding: 0 10px;
+}
+
+.layui-upload-list .item img {
+  margin: 9px;
+  cursor: pointer;
+}

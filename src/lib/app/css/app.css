@@ -1,0 +1,399 @@
+@import '../../vendor/layui/css/layui.css';
+@import "base.css";
+
+/* 项目公共样式 */
+.mgr10 {
+  margin-right: 10px
+}
+
+.mgb10 {
+  margin-bottom: 10px;
+} 
+
+.header {
+  background: #f1f1f1;
+}
+
+.header .top {
+  margin: 0 auto;
+  width: 1200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #666
+}
+
+.header .top .left {
+  float: left;
+  font-size: 14px;
+}
+
+.header .top .right {
+  float: right;
+}
+
+.header .banner {
+  width: 100%;
+  height: 210px;
+  background: url(../img/banner.jpg) center;
+}
+
+.header .banner .mid {
+  margin: 0 auto;
+  width: 1200px;
+  position: relative;
+  top: 50px;
+}
+
+.header .search-bar {
+  padding-left: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  margin: 5px 10px;
+  background: url(../img/search.png) #fff no-repeat;
+  background-position: 5px;
+  font-size: 14px;
+  border: 1px solid #dedede;
+}
+
+.header .search-bar input {
+  float: left;
+  border: 0;
+  padding: 0 5px;
+  width: 170px;
+  height: 100%;
+  line-height: 30px;
+  background: transparent;
+  color: #333;
+}
+
+.header .search-bar button {
+  border: 0;
+  background: #dedede;
+  height: 28px;
+  width: 50px;
+  color: #333;
+  cursor: pointer;
+}
+
+.header .login-bar a {
+  color: #666;
+  font-size: 14px;
+}
+
+.header .login-bar .login {
+  color: #3e6bb9;
+}
+
+.header .nav-bar {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #3e6bb9;
+}
+
+.header .nav-bar ul {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header .nav-bar li {
+  float: left;
+  width: 170px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.header .nav-bar li a {
+  display: block;
+}
+
+.header .nav-bar li:hover {
+  background: #3860a6;
+}
+
+.header .nav-bar li.active {
+  background: #325694;
+}
+
+footer {
+  background: #eceef0;
+  height: 170px;
+}
+
+footer .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+footer .site-icon {
+  margin: 54px 50px;
+}
+
+footer .mid {
+  width: 720px;
+  margin-top: 35px;
+}
+
+footer .mid li {
+  float: left;
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px;
+  margin-bottom: 16px;
+}
+
+footer .mid li span {
+  position: relative;
+  top: -1px;
+}
+
+footer .mid li a {
+  margin-right: 10px;
+}
+
+footer .mid-info {
+  font-size: 14px;
+  color: rgba(51, 51, 51, .7);
+  line-height: 1.7;
+  border-right: 1px solid #c6c6c6;
+}
+
+footer .mid-info-l {
+  margin-right: 66px;
+}
+
+footer .right {
+  width: 160px;
+  margin-top: 35px;
+  margin: 50px 19px 0 109px;
+}
+
+table.table tr:nth-child(odd) {
+  background: #f5f8ff;
+}
+
+table.table tr {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+table.table th {
+  text-align: center;
+}
+
+table.table td {
+  color: #666;
+}
+
+table.table td.tc {
+  text-align: center;
+}
+
+.breadcrumb {
+  height: 42px;
+  width: 100%;
+  line-height: 42px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.breadcrumb-bar {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+}
+
+main .container {
+  width: 1200px;
+  min-height: 400px;
+  margin: 20px auto 30px;
+}
+
+main .nav-bar {
+  width: 210px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+main .nav-bar .title {
+  padding: 30px 0 28px;
+  color: #3e6bb9;
+}
+
+main .nav-bar .chs {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+main .nav-bar .en {
+  font-size: 14px;
+}
+
+main .nav-bar .list a {
+  display: block;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  color: #333;
+  font-size: 14px;
+  transition: .3s;
+}
+
+main .nav-bar .list a.active {
+  background: #3e6bb9;
+  color: #fff;
+}
+
+main .nav-bar .list a.active:hover {
+  background: #3e6bb9;
+  color: #fff;
+}
+
+main .nav-bar .list a:hover {
+  background: #dce8fc;
+}
+
+main .in-content {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-left: 240px;
+}
+
+/* 内页列表 */
+
+.in-content .td_1 a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.in-content li:nth-child(odd) {
+  background: #f5f8ff;
+}
+
+.in-content li {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.in-content a .dot {
+  color: #999;
+  margin: 0 5px 0 0;
+}
+
+.in-content a .text {
+  width: 700px;
+  color: #333;
+}
+
+.in-content a .date {
+  color: #333;
+}
+
+.btn-bar {
+  padding: 36px 0 16px;
+  text-align: center;
+}
+
+.btn-bar .button {
+  width: 100px;
+  height: 35px;
+  line-height: 33px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.btn-bar .button.submit {
+  background: #3e6bb9;
+  color: #fff;
+}
+
+.form-item {
+  margin-bottom: 18px;
+}
+
+.form-item-label {
+  float: left;
+  width: 70px;
+  line-height: 34px;
+  margin-right: 11px;
+  text-align: right;
+  font-size: 14px;
+  color: #333
+}
+
+.form-item-content {
+  line-height: 34px;
+  font-size: 14px;
+}
+
+.form-item-content input {
+  width: 260px;
+  height: 34px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+}
+
+::-webkit-input-placeholder { 
+  color: #bbb;
+}
+
+.form-item-content select {
+  height: 34px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  width: 260px;
+  font-size: 14px;
+  padding: 0 32px 0 10px;
+  appearance: none;
+  background: url(../img/select.png) no-repeat right center;
+  outline: none;
+}
+
+.form-item-content textarea {
+  resize: none;
+  width: 662px;
+  min-height: 90px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  padding: 10px;
+  line-height: 1.2;
+}
+
+.page-bar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.empty-box {
+  width: 100%;
+  text-align: center;
+  color: #a8a8a8;
+  margin: 120px 0px;
+  font-size: 16px;
+}
+
+.empty-box span {
+  display: block;
+  margin-top: 24px;
+  position: relative;
+  left: -10px;
+}

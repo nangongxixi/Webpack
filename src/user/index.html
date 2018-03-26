@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body style="display:none">
+  @require('../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>
+          <a href="/user">个人中心</a> &gt;
+        </span>
+        <span>基本资料</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">个人中心</div>
+          <div class="en">Personal center</div>
+        </div>
+        <div class="list">
+          <a href="/user" class="active">基本资料</a>
+          <a href="/user/myOrder">我提交的</a>
+        </div>
+      </div>
+      <div class="in-content">
+        <div class="am-panel-group" id="accordion">
+          <div class="am-panel am-panel-default">
+            <div class="item">
+              <div class="row clearfix">
+                <div class="title fl">用户名</div>
+                <div class="content fl username"></div>
+                <div class="button fr" index="1">更改</div>
+              </div>
+            </div>
+            <div id="item1" class="am-panel-collapse am-collapse">
+              <div class="am-panel-bd next">
+                <input type="text" name="newname" placeholder="输入新用户名...">
+                <div class="radio-beauty-container" style="margin:10px 0">
+                  选择性别：
+                  <label style="margin-right:20px">
+                    <input type="radio" name="radioName" id="radioName1" value="1" checked="" hidden="">
+                    <label for="radioName1" class="radio-beauty"></label>
+                    <span class="radio-name">男</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="radioName" id="radioName2" value="0" hidden="">
+                    <label for="radioName2" class="radio-beauty"></label>
+                    <span class="radio-name">女</span>
+                  </label>
+                </div>
+                <div class="button-bar">
+                  <button class="button submit updateusername">确认</button>
+                  <button class="button cancel" index="1">取消</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="am-panel am-panel-default">
+            <div class="item">
+              <div class="row clearfix">
+                <div class="title fl">手机号</div>
+                <div class="content fl phone"></div>
+                <div class="button fr" index="2">更改</div>
+              </div>
+            </div>
+            <div id="item2" class="am-panel-collapse am-collapse">
+              <div class="am-panel-bd next">
+                <div class="step-1 ">
+                  <input type="password" name="password" placeholder="请输入登录密码，完成身份验证">
+                  <div class="button-bar">
+                    <button class="button submit login">下一步</button>
+                    <button class="button cancel" index="2">取消</button>
+                  </div>
+                </div>
+                <div class="step-2 active">
+                    <input type="text" name="phone" placeholder="请输入新手机号">
+                    <div>
+                      <input type="text" style="width:140px" name="verifycode">
+                      <button class="button code getCode" id="getCode">获取验证码</button>
+                    </div>
+                    <div class="button-bar">
+                      <button class="button submit updatephone">确认</button>
+                      <button class="button cancel" index="2">取消</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="am-panel am-panel-default">
+            <div class="item">
+              <div class="row clearfix">
+                <div class="title fl">登录密码</div>
+                <div class="content fl">******</div>
+                <div class="button fr" index="3">更改</div>
+              </div>
+            </div>
+            <div id="item3" class="am-panel-collapse am-collapse">
+              <div class="am-panel-bd next">
+                <input type="password" name="oldpwd" placeholder="请输入原密码"> <br>
+                <input type="password" name="newpwd" placeholder="请输入新密码"> <br>
+                <input type="password" name="repeat" placeholder="请确认新密码">
+                <div class="button-bar">
+                  <button class="button submit userpwdupdate">确认</button>
+                  <button class="button cancel"  index="3">取消</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  @require('../lib/app/components/footer.html')
+</body>
+
+</html>

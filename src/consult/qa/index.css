@@ -1,0 +1,123 @@
+main .chat-box {
+  border: 1px solid #e1e1e1;
+  height: 510px;
+  margin-left: 240px;
+}
+
+main .chat-box .chat-list {
+  height: 428px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 20px;
+  overFlow-y:scroll;
+}
+
+main .chat-box .chat-inp {
+  height: 80px;
+}
+
+.magBox {
+  margin: 14px 0;
+  position: relative;
+}
+
+.magBox .msgDiv {
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid #e1e1e1;
+  max-width: 80%;
+  min-height: 20px;
+  width: auto;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.rightMsg {
+  text-align: right;
+}
+
+.rightMsg .msgDiv {
+  float: right;
+  color: #fff;
+  position: relative;
+  text-align: left;
+  background: #4d8ade;
+}
+
+.magBox .msgDiv .msgText {
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.chatPanelList .msgData {
+  color: #aaa;
+  text-align: center;
+}
+
+.chatPanelList .msgData {
+  margin: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.leftMsg .msgDiv:before, .rightMsg .msgDiv:before {
+  width: 0;
+  position: absolute;
+  top: 12px;
+  border-style: solid;
+  border-color: transparent #fff;
+  content: "";
+}
+
+.leftMsg .msgDiv:before {
+  left: -6px;
+  border-width: 0 6px 6px 0;
+}
+
+.rightMsg .msgDiv:before {
+  right: -6px;
+  border-width: 0 0 6px 6px;
+}
+
+.rightMsg .msgDiv::before {
+  border-color: transparent #4d8ade;
+}
+
+.chat-inp textarea {
+  height: 80px;
+  padding: 10px 20px;
+  width: 850px;
+  resize: none;
+  font-size: 14px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.chat-inp button {
+  margin-top: 40px;
+  border: 0;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #3e6bb9;
+  font-size: 14px;
+  color: #fff;
+  background: #3e6bb9;
+  cursor: pointer;
+}
+
+.chat-inp button:disabled {
+  background: #fff;
+  color: #333;
+  border: 1px solid #e1e1e1;
+}

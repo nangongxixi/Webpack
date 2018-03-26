@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>县长信箱</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">网上受理</div>
+          <div class="en">Online acceptance</div>
+        </div>
+        <div class="list">
+          <a href="/acceptance">民生投诉</a>
+          <a href="/acceptance/magistrate" class="active">县长信箱</a>
+          <a href="/acceptance/show">诉求展示</a>
+          <a href="/acceptance/opinion">意见建议</a>
+        </div>
+      </div>
+      <div class="in-content">
+        <div class="step-2 active">
+          <form class="layui-form" id="form" onsubmit="return false;">
+            <div class="layui-form-item">
+              <label class="layui-form-label">标题</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input" lay-verify="required">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">类型</label>
+              <div class="layui-input-block">
+                <select name="ordertype" lay-filter="aihao">
+                  <option value="10">咨询</option>
+                  <option value="15">建议</option>
+                  <option value="20">求助</option>
+                  <option value="25">表扬</option>
+                  <option value="30">举报</option>
+                  <option value="35">其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">身份证号</label>
+              <div class="layui-input-block">
+                <input type="text" name="idcard" placeholder="请输入您的身份证号" autocomplete="off" class="layui-input" lay-verify="required|identity">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">地址</label>
+              <div class="layui-input-block">
+                <input type="text" name="address" placeholder="请输入事发详细地址" autocomplete="off" class="layui-input" lay-verify="required">
+              </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">内容</label>
+              <div class="layui-input-block" style="width:660px">
+                <textarea placeholder="请输入事件具体内容" name="content" class="layui-textarea"></textarea>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">上传附件</label>
+              <div class="layui-input-block">
+                  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+                  <div class="layui-upload-list">
+                  </div>
+              </div>
+            </div>
+            <div class="" style="display:none">
+              <input type="text" name="userid" value="1">
+              <input type="text" name="orderform" value="1">
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button class="layui-btn" type="submit" lay-submit="" lay-filter="demo1">立即提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  @require('../../../lib/app/components/footer.html')
+</body>
+
+</html>

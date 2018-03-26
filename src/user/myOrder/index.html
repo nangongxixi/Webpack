@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>
+          <a href="/user">个人中心</a> &gt;
+        </span>
+        <span>我提交的</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">个人中心</div>
+          <div class="en">Personal center</div>
+        </div>
+        <div class="list">
+          <a href="/user">基本资料</a>
+          <a href="/user/myOrder" class="active">我提交的</a>
+        </div>
+      </div>
+      <div class="in-content">
+        <table class="index-table table" id="box5">
+        </table>
+        <div class="page-bar">
+          <div id="page" class="pagination"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  @require('../../lib/app/components/footer.html')
+  <script type="text/html" id="box5_tpl">
+    <tbody>
+      <tr class="tr-tit">
+        <th style="width:460px">信件标题</th>
+        <th style="width:90px">信件类型</th>
+        <th style="width:120px">来源</th>
+        <th style="width:90px">来信人</th>
+        <th style="width:120px">来信日期</th>
+        <th style="width:120px">状态</th>
+        <th style="width:150px">评价</th>
+      </tr>
+     {{each datalist val i}}
+     <tr>
+        <td class="tl">
+          <div class="td_1 fof">
+            <a class="fof" style="width:360px" href="/user/myOrder/detail/index.html?id={{val.mailboxid}}">{{val.mailtitle}}</a>
+          </div>
+        </td>
+        <td class="tc">{{val.mailtypeid | _mailtypeid}}</td>
+        <td class="tc">{{val.mailfrom === 2 ? '投诉' : '县长信箱'}}</td>
+        <td class="tc"><div class="fof" style="width:120px">{{val.mailfromuser}}</div></td>
+        <td class="tc">{{val.mailcreatetime.split(' ')[0]}}</td>
+        <td class="tc">{{val.mailstatus | _mailstatus}}</td>
+        <td class="tc">
+          {{if val.mailevaluate === 0 || val.mailevaluate === 1}}
+          {{val.mailevaluate | _mailevaluate}}
+          {{/if}}
+          {{if val.mailevaluate !== 0 && val.mailevaluate !== 1}}
+          <a href="/user/myOrder/detail/index.html?id={{val.mailboxid}}">点击评价</a>
+          {{/if}}
+        </td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </script>
+</body>
+
+</html>

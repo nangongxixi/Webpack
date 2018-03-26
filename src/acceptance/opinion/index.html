@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+  <title>射阳县12345政务服务平台</title>
+</head>
+
+<body>
+  @require('../../lib/app/components/header.html')
+
+  <main class="clearfix">
+    <div class="breadcrumb">
+      <div class="breadcrumb-bar">
+        <span>
+          <span class="crumb-name">当前位置：</span>
+        </span>
+        <span>
+          <a href="/">首页</a> &gt;
+        </span>
+        <span>
+          <a href="/acceptance">网上受理</a> &gt;
+        </span>
+        <span>意见建议</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fl nav-bar">
+        <div class="title">
+          <div class="chs">网上受理</div>
+          <div class="en">Online acceptance</div>
+        </div>
+        <div class="list">
+          <a href="/acceptance">民生投诉</a>
+          <a href="/acceptance/magistrate">县长信箱</a>
+          <a href="/acceptance/show">诉求展示</a>
+          <a href="/acceptance/opinion" class="active">意见建议</a>
+        </div>
+      </div>
+      <div class="in-content" style="height:282px">
+        <form class="layui-form" id="form" onsubmit="return false;">
+          <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+              <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input" lay-verify="required">
+            </div>
+          </div>
+          <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">意见内容</label>
+            <div class="layui-input-block" style="width:660px">
+              <textarea placeholder="请输入事件具体内容" name="content" class="layui-textarea" lay-verify="required"></textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" type="submit" lay-submit="" lay-filter="demo1">立即提交</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  @require('../../lib/app/components/footer.html')
+</body>
+
+</html>
